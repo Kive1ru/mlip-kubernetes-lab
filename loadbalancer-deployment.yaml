@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-load-balancer
+  name: flask-load-balancer-deployment
 spec:
   replicas: 1 
   selector:
@@ -15,6 +15,6 @@ spec:
       containers:
       - name: flask-load-balancer
         # TODO: Replace <your-dockerhub-username> with your Docker Hub username
-        image: <your-dockerhub-username>/<loadbalancer-image-name>:1.0.0
+        image: kiveiru/flask-load-balancer:1.0.0
         ports:
         - containerPort: 8080
